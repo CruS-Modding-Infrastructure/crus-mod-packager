@@ -4,16 +4,16 @@ CruSModPackager is a Godot plugin made specifically for exporting Cruelty Squad 
 ## Installation
 Click Code > Download .zip and extract into your Cruelty Squad project's addons folder. For a guide on how to get the Cruelty Squad project files, see here: https://hackmd.io/@OsM6oUcXSwG3mLNvTlPMZg/rk56jogV_
 
-## CruSModPackager Guide (Also present in the plugin)
+## CruSModPackager WIP Guide (Also present in the plugin)
 
-First you need to enter:
+Firstly, enter the following required information about your mod:
 	- Mod name
 	- Author
 	- Version
 	- Description
 
-Then you need to select the mod folder.
-To do this, click on the browse button and navigate to your mod's folder.
+Next you need to select the mod folder.
+To do this, click on the browse button and navigate to your mod's folder. Your mod's folder should generally be in a folder named MOD_CONTENT.
 
 If your mod contains an init file, then you need to select it in the "Init File" field.
 Otherwise, you can leave the field empty.
