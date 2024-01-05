@@ -1,5 +1,5 @@
-# CruSModPackager V1.4 for Cruelty Squad
-CruSModPackager is a Godot plugin made specifically for exporting Cruelty Squad mods. It streamlines the process of fetching imported files, creating the mod info and exporting the mod, among other things.
+# CruS Mod Packager V1.4 for Cruelty Squad
+CruS Mod Packager is a Godot plugin made specifically for exporting Cruelty Squad mods. It streamlines the process of fetching imported files, creating the mod info and exporting the mod, among other useful things.
 
 ## Installation
 Click Code > Download ZIP and extract into your Cruelty Squad project's addons folder. For a guide on how to get the Cruelty Squad project files, see [here.](https://hackmd.io/@OsM6oUcXSwG3mLNvTlPMZg/rk56jogV_)
@@ -8,7 +8,7 @@ Click Code > Download ZIP and extract into your Cruelty Squad project's addons f
 This plugin uses parts of 7-Zip, 7-Zip is licensed under the GNU LGPL license.  
 7-Zip and the source code can be found at https://www.7-zip.org
 
-## CruSModPackager Guide (Also present in the plugin)
+## CruS Mod Packager Guide (Also present in the plugin)
 
 - This guide is WIP and subject to change. The fields that describe folder/file paths are required for the mod to function unless specified as optional.
 - Packaged mods are sent to AppData\Roaming\Godot\app_userdata\Cruelty Squad\mods\.
