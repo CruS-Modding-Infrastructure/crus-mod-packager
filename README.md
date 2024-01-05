@@ -2,7 +2,7 @@
 CruS Mod Packager is a Godot plugin made specifically for exporting Cruelty Squad mods. It streamlines the process of fetching imported files, creating the mod info and exporting the mod, among other useful things.
 
 ## Installation
-Click Code > Download ZIP and extract into your Cruelty Squad project's addons folder. For a guide on how to get the Cruelty Squad project files, see [here.](https://hackmd.io/@OsM6oUcXSwG3mLNvTlPMZg/rk56jogV_)
+Click Code > Download ZIP and extract into your Cruelty Squad project's addons folder. For a guide on how to get the Cruelty Squad project files (requirement for making mods), see [here.](https://hackmd.io/@OsM6oUcXSwG3mLNvTlPMZg/rk56jogV_)
 
 ## 7-Zip
 This plugin uses parts of 7-Zip, 7-Zip is licensed under the GNU LGPL license.  
@@ -22,7 +22,7 @@ Mod Info: This section let's you set the required information about your mod.
 - Mod name: The name you have chosen for the mod
 - Author: Your name and any contributors
 - Version: The current version of the mod, which you should increment when you create updated versions of the mod.
-- Description: Give a short summary of what the mod does
+- Description: Give a short summary of what the mod does.
 
 Mod Paths: This section is for selecting the paths that your mod's data is stored in.
 - Mod Folder: The root folder of your mod. mod folders should be place in a folder named "MOD_CONTENT" for example res://MOD_CONTENT/MyEpicMod. This path is required otherwise you will be unable to build your mod.
@@ -30,9 +30,9 @@ Mod Paths: This section is for selecting the paths that your mod's data is store
 - Additional Files: (Optional) You can specify another directory to be bundled with your mod.
 
 Game:
-- Load CruS after packaging: Check the box to attempt to launch Cruelty Squad with the mod deployed. (Any other installed mods will also be loaded, the directory is the same)
+- Load CruS after packaging: Check the box to attempt to launch Cruelty Squad with the mod deployed next time you pack the mod. (Any other installed mods will also be loaded, the directory is the same)
 - Detect CruS: Checks if CruS is installed at the default Steam location, fills in the path if found.
-- CruS Path: The folder path that contains your crueltysquad.exe
+- CruS Path: The folder path that contains your crueltysquad.exe. Set it manually if the above button does not work for you.
 
 Buttons:
 - Pack: Attempts to pack the specified mod files into an archive, send them to a subfolder in the mods folder and launch Cruelty Squad if specified.
