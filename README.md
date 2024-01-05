@@ -1,4 +1,4 @@
-# CruSModPackager V1.3 for Cruelty Squad
+# CruSModPackager V1.4 for Cruelty Squad
 CruSModPackager is a Godot plugin made specifically for exporting Cruelty Squad mods. It streamlines the process of fetching imported files, creating the mod info and exporting the mod, among other things.
 
 ## Installation
