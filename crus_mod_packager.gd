@@ -231,12 +231,12 @@ func _sevenzip_folder_selected(dir):
 
 func _save_data():
 	var dir = Directory.new()
-	if not dir.dir_exists("user://config/"):
-		dir.make_dir("user://config/")
+	if not dir.dir_exists("user://mod_config/"):
+		dir.make_dir("user://mod_config/")
 	
-	var config = File.new()
-	config.open("user://config/crusModPackager.save", File.WRITE)
-	config.store_line(to_json({
+	var mod_config = File.new()
+	mod_config.open("user://mod_config/CruSModPackager.save", File.WRITE)
+	mod_config.store_line(to_json({
 		"name": modName.text,
 		"author": modAuthor.text,
 		"version": modVersion.text,
@@ -250,7 +250,7 @@ func _save_data():
 		"sevenZipPath": sevenZipPath.text,
 		"recycleModFolder": trash_mod_folder.pressed,
 	}))
-	config.close()
+	mod_config.close()
 	
 	print("[CruS mod packager]: Saved")
 	info.modulate = Color.green
@@ -259,12 +259,12 @@ func _save_data():
 func _load_data() -> bool:
 	
 	var dir = Directory.new()
-	if not dir.dir_exists("user://config/"):
-		dir.make_dir("user://config/")
+	if not dir.dir_exists("user://mod_config/"):
+		dir.make_dir("user://mod_config/")
 
 	var file = File.new()
-	if file.file_exists("user://config/crusModPackager.save"):
-		file.open("user://config/crusModPackager.save", File.READ)
+	if file.file_exists("user://mod_config/CruSModPackager.save"):
+		file.open("user://mod_config/CruSModPackager.save", File.READ)
 		var data = parse_json(file.get_as_text())
 		file.close()
 		if typeof(data) == TYPE_DICTIONARY:
@@ -307,4 +307,4 @@ func _help_popup():
 
 
 func _on_DataFolder_pressed():
-	OS.shell_open(ProjectSettings.globalize_path("user://config"))
+	OS.shell_open(ProjectSettings.globalize_path("user://"))
