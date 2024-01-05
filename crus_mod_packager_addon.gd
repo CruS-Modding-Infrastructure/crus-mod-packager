@@ -4,7 +4,7 @@ extends EditorPlugin
 var dock
 
 func _enter_tree():
-	dock = preload("res://addons/CruSModPackager-main/dock.tscn").instance()
+	dock = preload("res://addons/CruSModPackager/dock.tscn").instance()
 	add_control_to_dock(DOCK_SLOT_LEFT_BR, dock)
 	
 	dock.dock_init()

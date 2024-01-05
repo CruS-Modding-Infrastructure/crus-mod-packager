@@ -148,7 +148,7 @@ func _on_RunButton_pressed():
 	
 	if OS.get_name() == "Windows":
 		var output = []
-		var zipPath = "\"" + ProjectSettings.globalize_path("res://addons/CruSModPackager-main/7z") + "/7za.exe\""
+		var zipPath = "\"" + ProjectSettings.globalize_path("res://addons/CruSModPackager/7z") + "/7za.exe\""
 		
 		if sevenZipPath.text != "":
 			zipPath = "\"" + sevenZipPath.text + "/7z.exe\""
