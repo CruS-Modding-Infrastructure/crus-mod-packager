@@ -100,6 +100,7 @@ onready var info:Label = $"%Info"
 onready var run_button:Button = $"%RunButton"
 
 onready var trash_mod_folder:CheckBox = $"%TrashModFolder"
+onready var version_info:Label = $"%VersionInfo"
 
 func _on_RunButton_pressed():
 	var dir:Directory = Directory.new()

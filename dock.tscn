@@ -469,6 +469,7 @@ size_flags_horizontal = 3
 text = "Help"
 
 [node name="Advanced Options" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -525,6 +526,42 @@ margin_bottom = 80.0
 hint_tooltip = "Require 7-Zip if you use Windows
 (Don't work on other OS)"
 text = "Move mod folder to the Recycle Bin"
+
+[node name="About" type="Tabs" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="PanelContainer" type="PanelContainer" parent="TabContainer/About"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/About/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1265.0
+margin_bottom = 677.0
+alignment = 1
+
+[node name="VersionInfo" type="Label" parent="TabContainer/About/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 293.0
+margin_right = 1258.0
+margin_bottom = 333.0
+rect_min_size = Vector2( 0, 40 )
+text = "CrusSModPackager V"
+align = 1
+
+[node name="Label" type="Label" parent="TabContainer/About/PanelContainer/VBoxContainer"]
+margin_top = 337.0
+margin_right = 1258.0
+margin_bottom = 377.0
+rect_min_size = Vector2( 0, 40 )
+text = "Made by DX and TRIGGEREDP"
+align = 1
 
 [connection signal="dir_selected" from="FileDialog" to="." method="_on_FileDialog_dir_selected"]
 [connection signal="dir_selected" from="FileDialog2" to="." method="_crus_folder_selected"]
