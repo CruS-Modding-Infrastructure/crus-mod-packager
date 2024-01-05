@@ -147,6 +147,7 @@ margin_right = 1209.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 60, 0 )
 size_flags_horizontal = 3
+placeholder_text = "The root directory of your mod"
 
 [node name="BrowseButton" type="Button" parent="TabContainer/Mod Setup/VBoxContainer/Path"]
 margin_left = 1213.0
@@ -173,6 +174,7 @@ margin_right = 1209.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 60, 0 )
 size_flags_horizontal = 3
+placeholder_text = "(Optional) File that is used to perform any setup the mod needs"
 
 [node name="BrowseButton" type="Button" parent="TabContainer/Mod Setup/VBoxContainer/Init"]
 margin_left = 1213.0
@@ -199,6 +201,7 @@ margin_right = 1209.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 60, 0 )
 size_flags_horizontal = 3
+placeholder_text = "(Optional) Select a directory to be included with the mod"
 
 [node name="BrowseButton" type="Button" parent="TabContainer/Mod Setup/VBoxContainer/AdditionalFiles"]
 margin_left = 1213.0
@@ -258,6 +261,7 @@ margin_right = 1209.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 60, 0 )
 size_flags_horizontal = 3
+placeholder_text = "The folder path that contains crueltysquad.exe"
 
 [node name="BrowseButton" type="Button" parent="TabContainer/Mod Setup/VBoxContainer/CruSPath"]
 margin_left = 1213.0
