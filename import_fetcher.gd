@@ -166,6 +166,9 @@ func _on_RunButton_pressed():
 	if trash_mod_folder.pressed:
 		OS.move_to_trash(ProjectSettings.globalize_path("user://mods/" + modName.text + "/mod/"))
 	
+	#attempt to save data after packing mod
+	_save_data()
+	
 	info.modulate = Color.green
 	info.text = "Done! Check the output for details."
 	
