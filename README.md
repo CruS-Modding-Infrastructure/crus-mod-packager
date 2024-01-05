@@ -11,7 +11,7 @@ This plugin uses parts of 7-Zip, 7-Zip is licensed under the GNU LGPL license.
 ## CruS Mod Packager Guide (Also present in the plugin)
 
 - This guide is WIP and subject to change. The fields that describe folder/file paths are required for the mod to function unless specified as optional.
-- The mods are designed to be loaded with [Cruelty Squad Mod Loader](https://crus.cc/mod/cruelty_squad_mod_loader/)
+- The mods are designed to be loaded with [Cruelty Squad Mod Loader](https://crus.cc/mod/cruelty_squad_mod_loader/) and [Cruelty Squad Mod Base](https://crus.cc/mod/crus_mod_base/)
 - Packaged mods are sent to AppData\Roaming\Godot\app_userdata\Cruelty Squad\mods\.
 - The plugin was made on Windows and likely will run into issues on other operating systems.
 - Ask in the #modifications channel of the Cruelty Squad discord if you need help with anything or want to learn how to make a mod.
