@@ -13,6 +13,7 @@ anchor_bottom = 1.0
 tab_align = 0
 
 [node name="Mod Setup" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -212,18 +213,25 @@ margin_right = 1272.0
 margin_bottom = 252.0
 rect_min_size = Vector2( 0, 8 )
 
-[node name="LaunchCrus" type="CheckBox" parent="TabContainer/Mod Setup/VBoxContainer"]
-unique_name_in_owner = true
+[node name="Label3" type="Label" parent="TabContainer/Mod Setup/VBoxContainer"]
 margin_top = 256.0
 margin_right = 1272.0
-margin_bottom = 280.0
+margin_bottom = 270.0
+text = "Game"
+align = 1
+
+[node name="LaunchCrus" type="CheckBox" parent="TabContainer/Mod Setup/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 274.0
+margin_right = 1272.0
+margin_bottom = 298.0
 pressed = true
 text = "Load CruS after packaging"
 
 [node name="CruSPath" type="HBoxContainer" parent="TabContainer/Mod Setup/VBoxContainer"]
-margin_top = 284.0
+margin_top = 302.0
 margin_right = 1272.0
-margin_bottom = 308.0
+margin_bottom = 326.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="TabContainer/Mod Setup/VBoxContainer/CruSPath"]
@@ -247,30 +255,30 @@ margin_bottom = 24.0
 text = "Browse"
 
 [node name="HSeparator2" type="HSeparator" parent="TabContainer/Mod Setup/VBoxContainer"]
-margin_top = 312.0
+margin_top = 330.0
 margin_right = 1272.0
-margin_bottom = 320.0
+margin_bottom = 338.0
 rect_min_size = Vector2( 0, 8 )
 
 [node name="Info" type="Label" parent="TabContainer/Mod Setup/VBoxContainer"]
 unique_name_in_owner = true
 modulate = Color( 0, 1, 0, 1 )
-margin_top = 324.0
+margin_top = 342.0
 margin_right = 1272.0
-margin_bottom = 338.0
+margin_bottom = 356.0
 align = 1
 
 [node name="RunButton" type="Button" parent="TabContainer/Mod Setup/VBoxContainer"]
 unique_name_in_owner = true
-margin_top = 342.0
+margin_top = 360.0
 margin_right = 1272.0
-margin_bottom = 362.0
+margin_bottom = 380.0
 text = "Pack"
 
 [node name="Config" type="HBoxContainer" parent="TabContainer/Mod Setup/VBoxContainer"]
-margin_top = 366.0
+margin_top = 384.0
 margin_right = 1272.0
-margin_bottom = 386.0
+margin_bottom = 404.0
 size_flags_horizontal = 3
 
 [node name="Button" type="Button" parent="TabContainer/Mod Setup/VBoxContainer/Config"]
@@ -301,7 +309,6 @@ size_flags_horizontal = 3
 text = "Help"
 
 [node name="Advanced Options" type="Tabs" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -314,19 +321,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 
+[node name="Label" type="Label" parent="TabContainer/Advanced Options/VBoxContainer"]
+margin_right = 1272.0
+margin_bottom = 14.0
+text = "Archive"
+align = 1
+
 [node name="ArchiveModFolder" type="CheckBox" parent="TabContainer/Advanced Options/VBoxContainer"]
 unique_name_in_owner = true
+margin_top = 18.0
 margin_right = 1272.0
-margin_bottom = 24.0
+margin_bottom = 42.0
 hint_tooltip = "Require 7-Zip if you use Windows
 (Don't work on other OS)"
 pressed = true
 text = "Convert mod folder to .zip"
 
 [node name="SevenZip" type="HBoxContainer" parent="TabContainer/Advanced Options/VBoxContainer"]
-margin_top = 28.0
+margin_top = 46.0
 margin_right = 1272.0
-margin_bottom = 52.0
+margin_bottom = 70.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="TabContainer/Advanced Options/VBoxContainer/SevenZip"]
@@ -352,12 +366,18 @@ text = "Browse"
 
 [node name="TrashModFolder" type="CheckBox" parent="TabContainer/Advanced Options/VBoxContainer"]
 unique_name_in_owner = true
-margin_top = 56.0
+margin_top = 74.0
 margin_right = 1272.0
-margin_bottom = 80.0
+margin_bottom = 98.0
 hint_tooltip = "Require 7-Zip if you use Windows
 (Don't work on other OS)"
 text = "Move mod folder to the Recycle Bin"
+
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Advanced Options/VBoxContainer"]
+margin_top = 102.0
+margin_right = 1272.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 0, 8 )
 
 [node name="About" type="Tabs" parent="TabContainer"]
 visible = false

@@ -15,7 +15,7 @@ func _enter_tree():
 	
 	add_control_to_dock(DOCK_SLOT_LEFT_BR, dock)
 	
-	dock.version_info.text = "CruSModPackager version " + version
+	dock.version_info.text = "CruS Mod Packager version " + version
 	
 	dock.dock_init()
 
