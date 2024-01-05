@@ -98,10 +98,15 @@ rect_min_size = Vector2( 60, 0 )
 size_flags_horizontal = 3
 placeholder_text = "Description of your mod"
 
-[node name="Path" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
 margin_top = 130.0
 margin_right = 1280.0
-margin_bottom = 154.0
+margin_bottom = 134.0
+
+[node name="Path" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 138.0
+margin_right = 1280.0
+margin_bottom = 162.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="VBoxContainer/Path"]
@@ -124,9 +129,9 @@ margin_bottom = 24.0
 text = "Browse"
 
 [node name="Init" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 158.0
+margin_top = 166.0
 margin_right = 1280.0
-margin_bottom = 182.0
+margin_bottom = 190.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="VBoxContainer/Init"]
@@ -149,9 +154,9 @@ margin_bottom = 24.0
 text = "Browse"
 
 [node name="AdditionalFiles" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 186.0
+margin_top = 194.0
 margin_right = 1280.0
-margin_bottom = 210.0
+margin_bottom = 218.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="VBoxContainer/AdditionalFiles"]
@@ -174,23 +179,23 @@ margin_bottom = 24.0
 text = "Browse"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
-margin_top = 214.0
-margin_right = 1280.0
-margin_bottom = 218.0
-
-[node name="ArchiveModFolder" type="CheckBox" parent="VBoxContainer"]
 margin_top = 222.0
 margin_right = 1280.0
-margin_bottom = 246.0
+margin_bottom = 226.0
+
+[node name="ArchiveModFolder" type="CheckBox" parent="VBoxContainer"]
+margin_top = 230.0
+margin_right = 1280.0
+margin_bottom = 254.0
 hint_tooltip = "Require 7-Zip if you use Windows
 (Don't work on other OS)"
 pressed = true
 text = "Convert mod folder to .zip"
 
 [node name="SevenZip" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 250.0
+margin_top = 258.0
 margin_right = 1280.0
-margin_bottom = 274.0
+margin_bottom = 282.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="VBoxContainer/SevenZip"]
@@ -205,6 +210,7 @@ margin_right = 1217.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 60, 0 )
 size_flags_horizontal = 3
+placeholder_text = "(Optional)"
 
 [node name="BrowseButton" type="Button" parent="VBoxContainer/SevenZip"]
 margin_left = 1221.0
@@ -213,16 +219,16 @@ margin_bottom = 24.0
 text = "Browse"
 
 [node name="LaunchCrus" type="CheckBox" parent="VBoxContainer"]
-margin_top = 278.0
+margin_top = 286.0
 margin_right = 1280.0
-margin_bottom = 302.0
+margin_bottom = 310.0
 pressed = true
 text = "Load CruS after packaging"
 
 [node name="CruSPath" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 306.0
+margin_top = 314.0
 margin_right = 1280.0
-margin_bottom = 330.0
+margin_bottom = 338.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="VBoxContainer/CruSPath"]
@@ -245,27 +251,27 @@ margin_bottom = 24.0
 text = "Browse"
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
-margin_top = 334.0
+margin_top = 342.0
 margin_right = 1280.0
-margin_bottom = 338.0
+margin_bottom = 346.0
 
 [node name="Info" type="Label" parent="VBoxContainer"]
 modulate = Color( 0, 1, 0, 1 )
-margin_top = 342.0
+margin_top = 350.0
 margin_right = 1280.0
-margin_bottom = 356.0
+margin_bottom = 364.0
 align = 1
 
 [node name="RunButton" type="Button" parent="VBoxContainer"]
-margin_top = 360.0
+margin_top = 368.0
 margin_right = 1280.0
-margin_bottom = 380.0
+margin_bottom = 388.0
 text = "Pack"
 
 [node name="Config" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 384.0
+margin_top = 392.0
 margin_right = 1280.0
-margin_bottom = 404.0
+margin_bottom = 412.0
 size_flags_horizontal = 3
 
 [node name="Button" type="Button" parent="VBoxContainer/Config"]
@@ -298,7 +304,6 @@ margin_top = -178.0
 margin_right = 256.0
 margin_bottom = 178.0
 popup_exclusive = true
-window_title = "Open a Directory"
 resizable = true
 mode = 2
 show_hidden_files = true
@@ -313,7 +318,6 @@ margin_top = -178.0
 margin_right = 256.0
 margin_bottom = 178.0
 popup_exclusive = true
-window_title = "Open a Directory"
 resizable = true
 mode = 2
 access = 2
@@ -329,7 +333,6 @@ margin_top = -178.0
 margin_right = 256.0
 margin_bottom = 178.0
 popup_exclusive = true
-window_title = "Open a Directory"
 resizable = true
 mode = 2
 access = 2
@@ -345,7 +348,6 @@ margin_top = -178.0
 margin_right = 256.0
 margin_bottom = 178.0
 popup_exclusive = true
-window_title = "Open a File"
 resizable = true
 mode = 0
 show_hidden_files = true
@@ -360,14 +362,12 @@ margin_top = -178.0
 margin_right = 256.0
 margin_bottom = 178.0
 popup_exclusive = true
-window_title = "Open a Directory"
 resizable = true
 mode = 2
 access = 2
 show_hidden_files = true
 
 [node name="Popup" type="WindowDialog" parent="."]
-visible = true
 margin_left = 116.0
 margin_top = 103.0
 margin_right = 1155.0
@@ -390,24 +390,25 @@ First you need to enter:
 	- Description
 
 Then you need to select the mod folder.
-To do this, click on the browse button and navigate to your mod's folder.
+To do this, click on the browse button and navigate to your mod's folder. Your mod's folder should generally be in a folder named \"MOD_CONTENT\".
 
 If your mod contains an init file, then you need to select it in the \"Init File\" field.
 Otherwise, you can leave the field empty.
 
 If you want the mod to be automatically archived in the mod.zip then you need to check the box next to \"Convert mod folder to .zip\"
-For this option to work, you need to install 7-Zip. (Currently only works on Windows).
+(Currently only works on Windows).
 If this option is not selected you will have to zip the files manually.
 
-7-Zip path is an optional tab in case you need to manually write the path to 7-Zip.
-If mod does not pack automatically after installing 7-Zip, then try to enter the path to 7-Zip manually.
+7-Zip path is an optional field in case you need to manually write the path to 7-Zip.
+If mod does not pack automatically, then try to enter the path to 7-Zip manually.
 
-Additional files is an optional tab that will add files in the selected folder to the archive.
-You can leave this tab empty if you don't need to add remaps or other files.
+Additional files is an optional field that will add files in the selected folder to the archive.
+You can leave this field empty if you don't need to add remaps or other files.
 
 \"Load CruS after packaging\" is responsible for launching the Cruelty Squad after packing the mod.
 To do this, you need to select the path where the Cruelty Squad executable file is located.
-For example: C:\\Program Files (x86)\\Steam\\steamapps\\common\\Cruelty Squad
+For example: \"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Cruelty Squad\"
+(Currently only works on Windows).
 
 That's all, now you can click the \"Pack\" button, after which your mod should appear in the mods folder.
 
@@ -424,24 +425,25 @@ First you need to enter:
 	- Description
 
 Then you need to select the mod folder.
-To do this, click on the browse button and navigate to your mod's folder.
+To do this, click on the browse button and navigate to your mod's folder. Your mod's folder should generally be in a folder named \"MOD_CONTENT\".
 
 If your mod contains an init file, then you need to select it in the \"Init File\" field.
 Otherwise, you can leave the field empty.
 
 If you want the mod to be automatically archived in the mod.zip then you need to check the box next to \"Convert mod folder to .zip\"
-For this option to work, you need to install 7-Zip. (Currently only works on Windows).
+(Currently only works on Windows).
 If this option is not selected you will have to zip the files manually.
 
-7-Zip path is an optional tab in case you need to manually write the path to 7-Zip.
-If mod does not pack automatically after installing 7-Zip, then try to enter the path to 7-Zip manually.
+7-Zip path is an optional field in case you need to manually write the path to 7-Zip.
+If mod does not pack automatically, then try to enter the path to 7-Zip manually.
 
-Additional files is an optional tab that will add files in the selected folder to the archive.
-You can leave this tab empty if you don't need to add remaps or other files.
+Additional files is an optional field that will add files in the selected folder to the archive.
+You can leave this field empty if you don't need to add remaps or other files.
 
 \"Load CruS after packaging\" is responsible for launching the Cruelty Squad after packing the mod.
 To do this, you need to select the path where the Cruelty Squad executable file is located.
-For example: C:\\Program Files (x86)\\Steam\\steamapps\\common\\Cruelty Squad
+For example: \"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Cruelty Squad\"
+(Currently only works on Windows).
 
 That's all, now you can click the \"Pack\" button, after which your mod should appear in the mods folder.
 
