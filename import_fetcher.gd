@@ -80,24 +80,26 @@ func read_and_fetch_import(dot_import_file_path:String, output_path:String) -> v
 	if dir.copy(path_line, "user://mods/" + modName.text + "/mod/.import/" + path_line.get_file()) != OK:
 		printerr("[CruS mod packager]: Warning: Could not copy file: ", path_line, " user://mods/" + modName.text + "/mod/.import/")
 
-onready var modName = $VBoxContainer/Name/ModName
-onready var modAuthor = $VBoxContainer/Author/ModAuthor
-onready var modVersion = $VBoxContainer/Version/ModVersion
-onready var modDescription = $VBoxContainer/Description/ModDescription
-onready var initFilePath = $VBoxContainer/Init/InitPath
+onready var modName = $"%ModName"
+onready var modAuthor = $"%ModAuthor"
+onready var modVersion = $"%ModVersion"
+onready var modDescription = $"%ModDescription"
+onready var initFilePath = $"%InitPath"
 
-onready var archiveModFolder = $VBoxContainer/ArchiveModFolder
-onready var launchCrus = $VBoxContainer/LaunchCrus
+onready var archiveModFolder = $"%ArchiveModFolder"
+onready var launchCrus = $"%LaunchCrus"
 
-onready var additionalFiles = $VBoxContainer/AdditionalFiles/AdditionalFilesPath
-onready var crusPath = $VBoxContainer/CruSPath/CruSPath
+onready var additionalFiles = $"%AdditionalFilesPath"
+onready var crusPath = $"%CruSPath"
 
-onready var sevenZipPath = $VBoxContainer/SevenZip/SevenZipPath
+onready var sevenZipPath = $"%SevenZipPath"
 
-onready var folder_path:LineEdit = $VBoxContainer/Path/FolderPath
-onready var file_dialog:FileDialog = $FileDialog
-onready var info:Label = $VBoxContainer/Info
-onready var run_button:Button = $VBoxContainer/RunButton
+onready var folder_path:LineEdit = $"%FolderPath"
+onready var file_dialog:FileDialog = $"%FileDialog"
+onready var info:Label = $"%Info"
+onready var run_button:Button = $"%RunButton"
+
+onready var trash_mod_folder:CheckBox = $"%TrashModFolder"
 
 func _on_RunButton_pressed():
 	var dir:Directory = Directory.new()
@@ -159,6 +161,9 @@ func _on_RunButton_pressed():
 				OS.execute("CMD.exe", ["/C", zipPath + " a -tzip \"" + ProjectSettings.globalize_path("user://mods/" + modName.text + "/mod.zip") + "\" \"" + additionalFiles.text + "/*\""], true, output, true, true)
 		if launchCrus.pressed:
 			OS.execute("CMD.exe", ["/C", crusPath.text.substr(0,2) + " && cd \"" + crusPath.text + "\" && crueltysquad.exe && pause"], false, output, true, true)
+	
+	if trash_mod_folder.pressed:
+		OS.move_to_trash(ProjectSettings.globalize_path("user://mods/" + modName.text + "/mod/"))
 	
 	info.modulate = Color.green
 	info.text = "Done! Check the output for details."
@@ -238,7 +243,8 @@ func _save_data():
 		"additionalFiles": additionalFiles.text,
 		"archiveModFolder": archiveModFolder.pressed,
 		"launchCrus": launchCrus.pressed,
-		"sevenZipPath": sevenZipPath.text
+		"sevenZipPath": sevenZipPath.text,
+		"recycleModFolder": trash_mod_folder.pressed,
 	}))
 	config.close()
 	
@@ -273,6 +279,8 @@ func _load_data() -> bool:
 			
 			sevenZipPath.text = data.sevenZipPath
 			
+			trash_mod_folder.pressed = data.recycleModFolder
+			
 			_on_FolderPath_text_entered(data.modFolder)
 			
 			print("[CruS mod packager]: Loaded")
@@ -292,3 +300,7 @@ func _load_data() -> bool:
 
 func _help_popup():
 	$Popup.popup_centered()
+
+
+func _on_DataFolder_pressed():
+	OS.shell_open(ProjectSettings.globalize_path("user://config"))
