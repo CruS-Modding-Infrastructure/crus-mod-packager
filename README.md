@@ -1,43 +1,53 @@
-# CruSModPackager V1.4 for Cruelty Squad
-CruSModPackager is a Godot plugin made specifically for exporting Cruelty Squad mods. It streamlines the process of fetching imported files, creating the mod info and exporting the mod, among other things.
+# CruS Mod Packager V1.4 for Cruelty Squad
+CruS Mod Packager is a Godot plugin made specifically for exporting Cruelty Squad mods. It streamlines the process of fetching imported files, creating the mod info and exporting the mod, among other useful things.
 
 ## Installation
-Click Code > Download ZIP and extract into your Cruelty Squad project's addons folder. For a guide on how to get the Cruelty Squad project files, see [here.](https://hackmd.io/@OsM6oUcXSwG3mLNvTlPMZg/rk56jogV_)
+Click Code > Download ZIP and extract into your Cruelty Squad project's addons folder. For a guide on how to get the Cruelty Squad project files (requirement for making mods), see [here.](https://hackmd.io/@OsM6oUcXSwG3mLNvTlPMZg/rk56jogV_)
 
 ## 7-Zip
 This plugin uses parts of 7-Zip, 7-Zip is licensed under the GNU LGPL license.  
 7-Zip and the source code can be found at https://www.7-zip.org
 
-## CruSModPackager WIP Guide (Also present in the plugin)
+## CruS Mod Packager Guide (Also present in the plugin)
 
-Firstly, enter the following required information about your mod:
-	- Mod name
-	- Author
-	- Version
-	- Description
+- This guide is WIP and subject to change. The fields that describe folder/file paths are required for the mod to function unless specified as optional.
+- The mods are designed to be loaded with [Cruelty Squad Mod Loader](https://crus.cc/mod/cruelty_squad_mod_loader/) and [Cruelty Squad Mod Base](https://crus.cc/mod/crus_mod_base/)
+- Packaged mods are sent to AppData\Roaming\Godot\app_userdata\Cruelty Squad\mods\.
+- The plugin was made on Windows and likely will run into issues on other operating systems.
+- Ask in the #modifications channel of the Cruelty Squad discord if you need help with anything or want to learn how to make a mod.
 
-Next you need to select the mod folder.
-To do this, click on the browse button and navigate to your mod's folder. Your mod's folder should generally be in a folder named "MOD_CONTENT".
+### Mod Setup Tab
 
-If your mod contains an init file, then you need to select it in the "Init File" field.
-Otherwise, you can leave the field empty.
+Mod Info: This section let's you set the required information about your mod.
+- Mod name: The name you have chosen for the mod
+- Author: Your name and any contributors
+- Version: The current version of the mod, which you should increment when you create updated versions of the mod.
+- Description: Give a short summary of what the mod does.
 
-If you want the mod to be automatically archived in the mod.zip then you need to check the box next to "Convert mod folder to .zip"
-(Currently only works on Windows).
-If this option is not selected you will have to zip the files manually.
+Mod Paths: This section is for selecting the paths that your mod's data is stored in.
+- Mod Folder: The root folder of your mod. mod folders should be place in a folder named "MOD_CONTENT" for example res://MOD_CONTENT/MyEpicMod. This path is required otherwise you will be unable to build your mod.
+- Init File: (Optional) The script used to perform set up for your mod. Init files are added to the scene tree in Godot, allowing you to execute code as needed.
+- Additional Files: (Optional) You can specify another directory to be bundled with your mod.
 
-7-Zip path is an optional field in case you need to manually write the path to 7-Zip.
-If mod does not pack automatically, then try to enter the path to 7-Zip manually.
+Game:
+- Load CruS after packaging: Check the box to attempt to launch Cruelty Squad with the mod deployed next time you pack the mod. (Any other installed mods will also be loaded, the directory is the same)
+- Detect CruS: Checks if CruS is installed at the default Steam location, fills in the path if found.
+- CruS Path: The folder path that contains your crueltysquad.exe. Set it manually if the above button does not work for you.
 
-Additional files is an optional field that will add files in the selected folder to the archive.
-You can leave this field empty if you don't need to add remaps or other files.
+Buttons:
+- Pack: Attempts to pack the specified mod files into an archive, send them to a subfolder in the mods folder and launch Cruelty Squad if specified.
+- Save: Saves the changes made in the plugin to be loaded next time Godot is launched.
+- Load: Manual button for loading any saved plugin data from previous sessions.
+- Open Data Folder: Button that takes you to the Cruelty Squad data folder, where you can access the folder where mods are deployed or the plugin data folder (mods and mod_config respectively).
+- Help: Opens a guide containing this information.
 
-"Load CruS after packaging" is responsible for launching the Cruelty Squad after packing the mod.
-To do this, you need to select the path where the Cruelty Squad executable file is located.
-For example: "C:\Program Files (x86)\Steam\steamapps\common\Cruelty Squad"
-(Currently only works on Windows).
+### Advanced Options Tab
 
-That's all, now you can click the "Pack" button, after which your mod should appear in the mods folder.
+Archive:
+- Convert mod folder to .zip: Packs the contents of the mod into a zip file, required for the mod to be loaded with CruS Modloader.
+- 7-Zip Path: (Optional) The folder path to the 7-Zip executable. 7-Zip is also bundled with this plugin, but if for some reason it doesnt work you can overwrite it here.
+- Move mod folder to recycle bin: Cleans up the mod folder created by the plugin (not the one in godot) after zipping it.
 
-Also, to avoid entering all the data every time, you can click on the "Save" button.
-After that, you can click the "Load" button to load all the settings. Any saved data should also be automatically loaded when starting Godot.
+### About Tab
+
+Version number and credits.
