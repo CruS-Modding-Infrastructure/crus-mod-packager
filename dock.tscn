@@ -13,7 +13,6 @@ anchor_bottom = 1.0
 tab_align = 0
 
 [node name="Mod Setup" type="Tabs" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -220,13 +219,25 @@ margin_bottom = 270.0
 text = "Game"
 align = 1
 
-[node name="LaunchCrus" type="CheckBox" parent="TabContainer/Mod Setup/VBoxContainer"]
-unique_name_in_owner = true
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Mod Setup/VBoxContainer"]
 margin_top = 274.0
 margin_right = 1272.0
 margin_bottom = 298.0
+alignment = 1
+
+[node name="LaunchCrus" type="CheckBox" parent="TabContainer/Mod Setup/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+margin_left = 496.0
+margin_right = 685.0
+margin_bottom = 24.0
 pressed = true
 text = "Load CruS after packaging"
+
+[node name="CruSCheck" type="Button" parent="TabContainer/Mod Setup/VBoxContainer/HBoxContainer"]
+margin_left = 689.0
+margin_right = 776.0
+margin_bottom = 24.0
+text = "Detect CruS"
 
 [node name="CruSPath" type="HBoxContainer" parent="TabContainer/Mod Setup/VBoxContainer"]
 margin_top = 302.0
@@ -309,6 +320,7 @@ size_flags_horizontal = 3
 text = "Help"
 
 [node name="Advanced Options" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -588,6 +600,7 @@ __meta__ = {
 [connection signal="pressed" from="TabContainer/Mod Setup/VBoxContainer/Path/BrowseButton" to="FileDialog" method="popup"]
 [connection signal="pressed" from="TabContainer/Mod Setup/VBoxContainer/Init/BrowseButton" to="FileDialog4" method="popup"]
 [connection signal="pressed" from="TabContainer/Mod Setup/VBoxContainer/AdditionalFiles/BrowseButton" to="FileDialog3" method="popup"]
+[connection signal="pressed" from="TabContainer/Mod Setup/VBoxContainer/HBoxContainer/CruSCheck" to="." method="_on_CruSCheck_pressed"]
 [connection signal="pressed" from="TabContainer/Mod Setup/VBoxContainer/CruSPath/BrowseButton" to="FileDialog2" method="popup"]
 [connection signal="pressed" from="TabContainer/Mod Setup/VBoxContainer/RunButton" to="." method="_on_RunButton_pressed"]
 [connection signal="pressed" from="TabContainer/Mod Setup/VBoxContainer/Config/Button" to="." method="_save_data"]

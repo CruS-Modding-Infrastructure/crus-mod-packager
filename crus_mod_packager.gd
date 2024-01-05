@@ -308,3 +308,14 @@ func _help_popup():
 
 func _on_DataFolder_pressed():
 	OS.shell_open(ProjectSettings.globalize_path("user://"))
+
+
+func _on_CruSCheck_pressed():
+	var file = File.new()
+	if file.file_exists("C:/Program Files (x86)/Steam/steamapps/common/Cruelty Squad/crueltysquad.exe"):
+		crusPath.text = "C:/Program Files (x86)/Steam/steamapps/common/Cruelty Squad"
+		info.modulate = Color.green
+		info.text = "CruS was found!"
+	else:
+		info.modulate = Color.yellow
+		info.text = "Couldn't find CruS."
