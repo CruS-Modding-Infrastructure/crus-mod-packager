@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://addons/CruSModPackager-main/crus_mod_packager.gd" type="Script" id=1]
+[ext_resource path="res://addons/CruSModPackager-main/tree_test.gd" type="Script" id=2]
 
 [node name="CruS Mod Packager" type="Control"]
 anchor_right = 1.0
@@ -387,13 +388,41 @@ margin_right = 1272.0
 margin_bottom = 98.0
 hint_tooltip = "Require 7-Zip if you use Windows
 (Don't work on other OS)"
-text = "Move mod folder to the Recycle Bin"
+pressed = true
+text = "Move working folder to the Recycle Bin"
 
 [node name="HSeparator" type="HSeparator" parent="TabContainer/Advanced Options/VBoxContainer"]
 margin_top = 102.0
 margin_right = 1272.0
 margin_bottom = 110.0
 rect_min_size = Vector2( 0, 8 )
+
+[node name="OutputPathNOTIMPLEMENTED" type="HBoxContainer" parent="TabContainer/Advanced Options/VBoxContainer"]
+visible = false
+margin_top = 114.0
+margin_right = 1272.0
+margin_bottom = 138.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TabContainer/Advanced Options/VBoxContainer/OutputPathNOTIMPLEMENTED"]
+margin_top = 5.0
+margin_right = 81.0
+margin_bottom = 19.0
+text = "Output Path:"
+
+[node name="SevenZipPath" type="LineEdit" parent="TabContainer/Advanced Options/VBoxContainer/OutputPathNOTIMPLEMENTED"]
+margin_left = 85.0
+margin_right = 1209.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 60, 0 )
+size_flags_horizontal = 3
+placeholder_text = "(Optional, 7-Zip is included)"
+
+[node name="BrowseButton" type="Button" parent="TabContainer/Advanced Options/VBoxContainer/OutputPathNOTIMPLEMENTED"]
+margin_left = 1213.0
+margin_right = 1272.0
+margin_bottom = 24.0
+text = "Browse"
 
 [node name="About" type="Tabs" parent="TabContainer"]
 visible = false
@@ -512,7 +541,6 @@ access = 2
 show_hidden_files = true
 
 [node name="Popup" type="WindowDialog" parent="."]
-visible = true
 margin_left = 116.0
 margin_top = 103.0
 margin_right = 1155.0
@@ -526,7 +554,7 @@ anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 bbcode_enabled = true
-bbcode_text = "CruS Mod Packager V1.4 for Cruelty Squad
+bbcode_text = "CruS Mod Packager V1.5 for Cruelty Squad
 CruS Mod Packager is a Godot plugin made specifically for exporting Cruelty Squad mods. It streamlines the process of fetching imported files, creating the mod info and exporting the mod, among other useful things.
 
 Installation
@@ -582,7 +610,7 @@ Version number and credits.
 
 
 [rainbow]Good luck <3[/rainbow]"
-text = "CruS Mod Packager V1.4 for Cruelty Squad
+text = "CruS Mod Packager V1.5 for Cruelty Squad
 CruS Mod Packager is a Godot plugin made specifically for exporting Cruelty Squad mods. It streamlines the process of fetching imported files, creating the mod info and exporting the mod, among other useful things.
 
 Installation
@@ -642,6 +670,13 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="Tree" type="Tree" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 3
+script = ExtResource( 2 )
+
 [connection signal="text_entered" from="TabContainer/Mod Setup/VBoxContainer/Path/FolderPath" to="." method="_on_FolderPath_text_entered"]
 [connection signal="pressed" from="TabContainer/Mod Setup/VBoxContainer/Path/BrowseButton" to="." method="_on_BrowseButton_pressed"]
 [connection signal="pressed" from="TabContainer/Mod Setup/VBoxContainer/Path/BrowseButton" to="FileDialog" method="popup"]
@@ -655,6 +690,7 @@ __meta__ = {
 [connection signal="pressed" from="TabContainer/Mod Setup/VBoxContainer/Config/DataFolder" to="." method="_on_DataFolder_pressed"]
 [connection signal="pressed" from="TabContainer/Mod Setup/VBoxContainer/Config/Button3" to="." method="_help_popup"]
 [connection signal="pressed" from="TabContainer/Advanced Options/VBoxContainer/SevenZip/BrowseButton" to="FileDialog5" method="popup"]
+[connection signal="pressed" from="TabContainer/Advanced Options/VBoxContainer/OutputPathNOTIMPLEMENTED/BrowseButton" to="FileDialog5" method="popup"]
 [connection signal="dir_selected" from="FileDialog" to="." method="_on_FileDialog_dir_selected"]
 [connection signal="dir_selected" from="FileDialog2" to="." method="_crus_folder_selected"]
 [connection signal="dir_selected" from="FileDialog3" to="." method="_additional_files_folder_selected"]

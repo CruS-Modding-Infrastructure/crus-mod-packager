@@ -8,7 +8,8 @@ func dock_init():
 	if not _load_data():
 		_save_data()
 		_load_data()
-
+	$Tree.build()
+	
 func get_filelist(scan_dir : String, filter_exts : Array = []) -> Array:
 	var my_files: Array = []
 	var dir:Directory = Directory.new()
@@ -231,12 +232,12 @@ func _sevenzip_folder_selected(dir):
 
 func _save_data():
 	var dir = Directory.new()
-	if not dir.dir_exists("user://mod_config/"):
-		dir.make_dir("user://mod_config/")
+	if not dir.dir_exists("user://modpackager_config/"):
+		dir.make_dir("user://modpackager_config/")
 	
-	var mod_config = File.new()
-	mod_config.open("user://mod_config/CruSModPackager.save", File.WRITE)
-	mod_config.store_line(to_json({
+	var modpackager_config = File.new()
+	modpackager_config.open("user://modpackager_config/CruSModPackager.save", File.WRITE)
+	modpackager_config.store_line(to_json({
 		"name": modName.text,
 		"author": modAuthor.text,
 		"version": modVersion.text,
@@ -250,7 +251,7 @@ func _save_data():
 		"sevenZipPath": sevenZipPath.text,
 		"recycleModFolder": trash_mod_folder.pressed,
 	}))
-	mod_config.close()
+	modpackager_config.close()
 	
 	print("[CruS mod packager]: Saved")
 	info.modulate = Color.green
@@ -259,12 +260,12 @@ func _save_data():
 func _load_data() -> bool:
 	
 	var dir = Directory.new()
-	if not dir.dir_exists("user://mod_config/"):
-		dir.make_dir("user://mod_config/")
+	if not dir.dir_exists("user://modpackager_config/"):
+		dir.make_dir("user://modpackager_config/")
 
 	var file = File.new()
-	if file.file_exists("user://mod_config/CruSModPackager.save"):
-		file.open("user://mod_config/CruSModPackager.save", File.READ)
+	if file.file_exists("user://modpackager_config/CruSModPackager.save"):
+		file.open("user://modpackager_config/CruSModPackager.save", File.READ)
 		var data = parse_json(file.get_as_text())
 		file.close()
 		if typeof(data) == TYPE_DICTIONARY:
